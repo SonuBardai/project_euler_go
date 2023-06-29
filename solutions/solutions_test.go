@@ -20,3 +20,20 @@ func TestMultiples(t *testing.T) {
 		}
 	}
 }
+
+func TestFibonacci(t *testing.T) {
+	testCases := []struct {
+		name   string
+		input  int
+		output int
+	}{
+		{"test_1", 50, 44},
+		{"test_2", 4_000_000, 4613732},
+	}
+	for _, testCase := range testCases {
+		multiples := Fibonacci(testCase.input)
+		if multiples != testCase.output {
+			t.Errorf("expected %d, got %d", testCase.output, multiples)
+		}
+	}
+}
