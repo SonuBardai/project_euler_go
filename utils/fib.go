@@ -25,8 +25,11 @@ func FibSeriesRecursive(input int) []int {
 
 func FibSeries(input int) []int {
 	var fib_series = []int{1, 1}
-	for fib_series[len(fib_series) - 1] < input {
-		temp := fib_series[len(fib_series) - 1] + fib_series[len(fib_series) - 2]
+	for fib_series[len(fib_series)-1] < input {
+		temp := fib_series[len(fib_series)-1] + fib_series[len(fib_series)-2]
+		if temp >= input {
+			break
+		}
 		fib_series = append(fib_series, temp)
 	}
 	return fib_series
