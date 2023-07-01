@@ -37,3 +37,20 @@ func TestFibonacci(t *testing.T) {
 		}
 	}
 }
+
+func TestPrimeFactors(t *testing.T) {
+	testCases := []struct {
+		name   string
+		input  int
+		output int
+	}{
+		{"test_1",13195 , 29},
+		{"test_2", 600851475143, 6857},
+	}
+	for _, testCase := range testCases {
+		multiples := PrimeFactor(testCase.input)
+		if multiples != testCase.output {
+			t.Errorf("expected %d, got %d", testCase.output, multiples)
+		}
+	}
+}
