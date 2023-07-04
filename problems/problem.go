@@ -14,6 +14,8 @@ func ProblemMapper(problem_number int) (func(input int) int, error) {
 		return solutions.Fibonacci, nil
 	case 3:
 		return solutions.PrimeFactor, nil
+	case 4:
+		return solutions.PalindromeProduct, nil
 	default:
 		return nil, fmt.Errorf("no matching problem found")
 	}

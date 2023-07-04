@@ -54,3 +54,21 @@ func TestPrimeFactors(t *testing.T) {
 		}
 	}
 }
+
+
+func TestPalindromeProduct(t *testing.T) {
+	testCases := []struct {
+		name   string
+		input  int
+		output int
+	}{
+		{"test_1", 2, 9009},
+		{"test_2", 3, 906609},
+	}
+	for _, testCase := range testCases {
+		multiples := PalindromeProduct(testCase.input)
+		if multiples != testCase.output {
+			t.Errorf("expected %d, got %d", testCase.output, multiples)
+		}
+	}
+}

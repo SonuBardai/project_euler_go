@@ -47,3 +47,15 @@ func PrimeFactor(input int) int {
 	}
 	return 1
 }
+
+func PalindromeProduct(input int) int {
+	for i := utils.Niner(input); i > utils.Niner(input-1); i-- {
+		for j := utils.Niner(input); j > utils.Niner(input)-int(math.Pow10(input-1)); j-- {
+			p := i * j
+			if utils.IsPalindrome(p) {
+				return p
+			}
+		}
+	}
+	return 0
+}
